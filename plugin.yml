@@ -1,0 +1,8 @@
+main: me.theredbaron24.autodoors.Main
+name: AutoDoors
+author: THEREDBARON24
+version: 1.1
+description: A plugin that allows for the creation of doors that open automatically
+commands:
+    autodoor:
+    ad:

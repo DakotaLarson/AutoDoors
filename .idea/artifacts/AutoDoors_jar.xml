@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AutoDoors:jar">
+    <output-path>$USER_HOME$/Desktop/Misc/Minecraft/Server/plugins</output-path>
+    <root id="archive" name="AutoDoors.jar">
+      <element id="module-output" name="AutoDoors" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+    </root>
+  </artifact>
+</component>
