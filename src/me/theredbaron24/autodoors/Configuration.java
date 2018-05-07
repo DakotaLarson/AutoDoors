@@ -6,18 +6,15 @@ import java.io.IOException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-public class Configuration {
+class Configuration {
 	
 	private static Main main = null;
 	private static FileConfiguration config = null;
 	private static File configFile = null;
 
-	public static void init(Main main){
+	static void init(Main main){
 		Configuration.main = main;
-		/*configFile = loadResource(main, "config.yml");
-		config = YamlConfiguration.loadConfiguration(configFile);
-		main.saveDefaultConfig();*/
-		if(getConfig().getBoolean("permForDoors") == false){
+		if(!getConfig().getBoolean("permForDoors")){
 			Main.needsPerm = false;
 			getConfig().set("permForDoors", false);
 			saveConfig();
@@ -26,21 +23,21 @@ public class Configuration {
 		}
 	}
 	
-	public static FileConfiguration getConfig(){
+	static FileConfiguration getConfig(){
 		if(config == null){
 			reloadConfig();
 		}
 		return config;
 	}
 	
-	public static void reloadConfig(){
+	private static void reloadConfig(){
 		if (configFile == null) {
 			configFile = new File(main.getDataFolder(), "config.yml");
 		}
 		config = YamlConfiguration.loadConfiguration(configFile);
 	}
-	
-	public static void saveConfig(){
+
+	static void saveConfig(){
 		if (config == null || configFile == null) {
 			return;
 		}

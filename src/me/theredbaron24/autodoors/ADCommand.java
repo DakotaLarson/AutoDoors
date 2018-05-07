@@ -30,7 +30,7 @@ public class ADCommand implements CommandExecutor{
 			return false;
 		}
 		Player player = (Player) sender;
-		if(Main.needsPerm && (player.hasPermission("autodoor.command") || player.isOp()) == false){
+		if(Main.needsPerm && !(player.hasPermission("autodoor.command") || player.isOp())){
 			player.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
 			return false;
 		}
@@ -138,11 +138,9 @@ public class ADCommand implements CommandExecutor{
 		ConfigurationSection section = Configuration.getConfig().getConfigurationSection("doors." + title);
 		if(section != null){
 			player.sendMessage(ChatColor.YELLOW + title + ChatColor.RED + " already exists.");
-			return;
 		}else{
 			if(location.getBlock().getType() == Material.AIR){
 				player.sendMessage(ChatColor.YELLOW + "Please look at a block.");
-				return;
 			}else{
 				String locString = location.getWorld().getName()+ " : " + location.getX() + " : " + location.getY() + " : " + location.getZ();
 				Configuration.getConfig().set("doors." + title + ".mainLoc", locString);
@@ -199,7 +197,7 @@ public class ADCommand implements CommandExecutor{
 		}
 		String locString = location.getWorld().getName()+ " : " + location.getBlockX() + " : " + location.getBlockY() + " : " + location.getBlockZ();
 		List<String> locations = section.getStringList("locations");
-		if(locations.contains(locString) == false){
+		if(!locations.contains(locString)){
 			player.sendMessage(ChatColor.AQUA + title + ChatColor.YELLOW + " does not have this block added.");
 			return;
 		}
@@ -274,7 +272,7 @@ public class ADCommand implements CommandExecutor{
 		ConfigurationSection section = Configuration.getConfig().getConfigurationSection("doors." + door);
 		if(section == null){
 			player.sendMessage(ChatColor.AQUA + door + ChatColor.YELLOW + " does not exist.");
-		}else if(section.getBoolean("enabled") == false){
+		}else if(!section.getBoolean("enabled")){
 			player.sendMessage(ChatColor.AQUA + door + ChatColor.YELLOW + " is not enabled.");
 		}else{
 			Door d = TaskHandler.getDoor(door);

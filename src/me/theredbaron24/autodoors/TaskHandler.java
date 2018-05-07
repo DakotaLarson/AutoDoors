@@ -27,7 +27,7 @@ public class TaskHandler implements Listener {
 
 	private static Map<UUID, Door> players = new HashMap<UUID, Door>();
 	
-	public static void init(Main main){
+	static void init(){
 		Main.doors = new HashSet<Door>();
 		ConfigurationSection superSection = Configuration.getConfig().getConfigurationSection("doors");
 		if(superSection != null){
@@ -57,17 +57,22 @@ public class TaskHandler implements Listener {
 								for(String s : locs){
 									locArgs = s.split(" : ");
 									world = Bukkit.getWorld(locArgs[0]);
-									x = Double.parseDouble(locArgs[1]);
-									y = Double.parseDouble(locArgs[2]);
-									z = Double.parseDouble(locArgs[3]);
-									Location location = new Location(world, x, y, z);
-									Block b = location.getBlock();
-									if(b.getType() == Material.AIR){
-										issues.add(title);
+									if(world == null){
+										Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "World: " + ChatColor.YELLOW + locArgs[0] + ChatColor.RED + " does not exist, but has doors defined in AutoDoors configuration.");
+									}else{
+										x = Double.parseDouble(locArgs[1]);
+										y = Double.parseDouble(locArgs[2]);
+										z = Double.parseDouble(locArgs[3]);
+										Location location = new Location(world, x, y, z);
+										Block b = location.getBlock();
+										if(b == null || b.getType() == Material.AIR){
+											issues.add(title);
+										}else{
+											@SuppressWarnings("deprecation")
+											String str = b.getType().name() + " : " + b.getData();
+											locations.put(location, str);
+										}
 									}
-									@SuppressWarnings("deprecation")
-									String str = b.getType().name() + " : " + b.getData();
-									locations.put(location, str);
 								}
 								Sound sound = null;
 								float pitch = 0f;
@@ -93,7 +98,7 @@ public class TaskHandler implements Listener {
 				}
 			}
 			if(issues.isEmpty()){
-				if(doors.isEmpty() == false){
+				if(!doors.isEmpty()){
 					Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "All Doors were enabled successfully!");
 				}
 			}else{
@@ -104,15 +109,15 @@ public class TaskHandler implements Listener {
 			}
 		}
 	}
-	public static void addDoor(Door door){
+	static void addDoor(Door door){
 		Main.doors.add(door);
 	}
-	public static boolean removeDoor(Door door){
-		if(Main.doors.contains(door) == false) return false;
+	static boolean removeDoor(Door door){
+		if(!Main.doors.contains(door)) return false;
 		Main.doors.remove(door);
 		return true;
 	}
-	public static Door getDoor(String title){
+	static Door getDoor(String title){
 		if(Main.doors == null) return null;
 		for(Door door : Main.doors){
 			if(door.getTitle().equals(title)){
@@ -177,7 +182,7 @@ public class TaskHandler implements Listener {
 		if(players.containsKey(id)){
 			Door door = players.get(id);
 			players.remove(id);
-			if(players.values().contains(door) == false){
+			if(!players.values().contains(door)){
 				door.close();
 			}
 		}

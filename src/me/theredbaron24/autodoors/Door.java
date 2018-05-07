@@ -8,7 +8,7 @@ import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 
-public class Door {
+class Door {
 
 	//Material : data
 	private String title = null;
@@ -21,8 +21,8 @@ public class Door {
 	private Sound sound = null;
 	private float pitch = 0f;
 	private float volume = 0f;
-	
-	public Door(String title, Location location, Map<Location, String> locations, double height, double distance, Sound sound, float pitch, float volume, boolean needsPerm){
+
+	Door(String title, Location location, Map<Location, String> locations, double height, double distance, Sound sound, float pitch, float volume, boolean needsPerm){
 		this.title = title;
 		this.loc = location;
 		this.locations = locations;
@@ -34,7 +34,7 @@ public class Door {
 		this.needsPerm = needsPerm;
 	}
 	
-	public void open(){
+	void open(){
 		if(isOpen) return;
 		isOpen = true;
 		for(Location location : locations.keySet()){
@@ -46,8 +46,8 @@ public class Door {
 		}
 	}
 	@SuppressWarnings("deprecation")
-	public void close(){
-		if(isOpen == false) return;
+	void close(){
+		if(!isOpen) return;
 		isOpen = false;
 		for(Location location : locations.keySet()){
 			Block block = location.getBlock();
@@ -60,20 +60,20 @@ public class Door {
 			state.update();
 		}
 	}
-	public Location getLoc(){
+	Location getLoc(){
 		return loc;
 	}
 	
-	public double getDistance(){
+	double getDistance(){
 		return distance;
 	}
-	public double getHeight(){
+	double getHeight(){
 		return height;
 	}
-	public String getTitle(){
+	String getTitle(){
 		return title;
 	} 
-	public boolean needsPermission(){
+	boolean needsPermission(){
 		return needsPerm;
 	}
 }

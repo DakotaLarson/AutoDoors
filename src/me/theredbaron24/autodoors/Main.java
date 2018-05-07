@@ -9,15 +9,17 @@ import org.bukkit.scheduler.BukkitTask;
 public class Main extends JavaPlugin{
 
 	private ADCommand command = new ADCommand();
-	public static Set<Door> doors = null;
-	public static BukkitTask task = null;
-	public static boolean needsPerm = false;
+	private static BukkitTask task = null;
+
+	static Set<Door> doors = null;
+	static boolean needsPerm = false;
+
 	@Override
 	public void onEnable(){
 		this.getCommand("ad").setExecutor(command);
 		this.getCommand("autodoor").setExecutor(command);
 		Configuration.init(this);
-		TaskHandler.init(this);
+		TaskHandler.init();
 		Bukkit.getPluginManager().registerEvents(new TaskHandler(), this);
 		this.getLogger().info("has been enabled");
 	}
@@ -26,7 +28,7 @@ public class Main extends JavaPlugin{
 	public void onDisable(){
 		if(Main.task != null) Main.task.cancel();
 		Main.task = null;
-		if(Main.doors != null && Main.doors.isEmpty() == false){
+		if(Main.doors != null && !Main.doors.isEmpty()){
 			for(Door door : Main.doors){
 				door.close();
 			}
