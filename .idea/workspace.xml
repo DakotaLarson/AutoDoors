@@ -6,19 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e99369b-b5d8-4f46-a1e0-cde2fd968504" name="Default" comment="Initialization Error Checking, Cleanup.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/me/theredbaron24/autodoors/ADCommand.class" afterPath="$PROJECT_DIR$/bin/me/theredbaron24/autodoors/ADCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/me/theredbaron24/autodoors/Configuration.class" afterPath="$PROJECT_DIR$/bin/me/theredbaron24/autodoors/Configuration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/me/theredbaron24/autodoors/Door.class" afterPath="$PROJECT_DIR$/bin/me/theredbaron24/autodoors/Door.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/me/theredbaron24/autodoors/Main.class" afterPath="$PROJECT_DIR$/bin/me/theredbaron24/autodoors/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/me/theredbaron24/autodoors/TaskHandler.class" afterPath="$PROJECT_DIR$/bin/me/theredbaron24/autodoors/TaskHandler.class" />
+    <list default="true" id="6e99369b-b5d8-4f46-a1e0-cde2fd968504" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin.yml" afterPath="$PROJECT_DIR$/plugin.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/theredbaron24/autodoors/ADCommand.java" afterPath="$PROJECT_DIR$/src/me/theredbaron24/autodoors/ADCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/theredbaron24/autodoors/Configuration.java" afterPath="$PROJECT_DIR$/src/me/theredbaron24/autodoors/Configuration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/theredbaron24/autodoors/Door.java" afterPath="$PROJECT_DIR$/src/me/theredbaron24/autodoors/Door.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/theredbaron24/autodoors/Main.java" afterPath="$PROJECT_DIR$/src/me/theredbaron24/autodoors/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/theredbaron24/autodoors/TaskHandler.java" afterPath="$PROJECT_DIR$/src/me/theredbaron24/autodoors/TaskHandler.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -284,11 +273,18 @@
       <option name="presentableId" value="Default" />
       <updated>1520273774116</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initialization Error Checking, Cleanup.">
+      <created>1525664887615</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1525664887615</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -299,7 +295,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
